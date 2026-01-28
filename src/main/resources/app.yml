@@ -20,10 +20,8 @@ solon:
 mybatis.db1:
   typeAliases:    #支持包名 或 类名 //支持 ** 和 *
     - "com.*"
-  #        - "demo4031.*.AppxModel"
   mappers:        #支持包名 或 类名 或 xml（.xml结尾）//支持 ** 和 *
     - "com.*"
-  #        - "classpath:demo4031/dso/mapper/*.xml"
   configuration:
     cacheEnabled: false
     mapperVerifyEnabled: false
