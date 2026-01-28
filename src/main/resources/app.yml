@@ -1,0 +1,41 @@
+server.port: 2010
+solon.app:
+  name: 'lingxi-mcp'
+  group: 'demo'
+solon.logging:
+  appender:
+    console:
+      level: INFO
+    file:
+      level: INFO
+solon:
+  dataSources:
+    db1!:
+      class: "com.alibaba.druid.pool.DruidDataSource"
+      url: "jdbc:mysql://10.10.10.10:3306/order"
+      driverClassName: "com.mysql.cj.jdbc.Driver"
+      username: "username"
+      password: "password"
+      
+mybatis.db1:
+  typeAliases:    #支持包名 或 类名 //支持 ** 和 *
+    - "com.*"
+  #        - "demo4031.*.AppxModel"
+  mappers:        #支持包名 或 类名 或 xml（.xml结尾）//支持 ** 和 *
+    - "com.*"
+  #        - "classpath:demo4031/dso/mapper/*.xml"
+  configuration:
+    cacheEnabled: false
+    mapperVerifyEnabled: false
+    mapUnderscoreToCamelCase: true
+    logImpl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+    globalConfig:
+      banner: false
+      metaObjectHandler: "com.jcloud.lingxi.service.MonitorOrderService"
+      dbConfig:
+        logicDeleteField: "deleted"
+        logicDeleteValue: "2"
+monitor:
+  config:
+    email:
+      duration: 30
