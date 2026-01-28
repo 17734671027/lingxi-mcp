@@ -1,0 +1,1 @@
+使用jdk17搭建的Spring风格的mcp 已内置 数据库和RestTemplate组件 开箱即用 没有其他额外配置 
